@@ -6,8 +6,7 @@ primary color variable below.
 */
 
 :root {
-	--color-primary: blue;
-	--color-secondary: #c00;
+	--color-primary: #EE0000;
 }
 
 /*
@@ -22,9 +21,52 @@ to help you out.
 	--size-xl: 1200px;
 */
 
+body{
+	margin: 50px;
+}
 h1 {
 	color: var(--color-primary);
+	font-family: 'Staatliches', sans-serif;
+	text-align: center;
 }
+
+/* back and next buttons */
+.button{
+	display: flex;
+	background-color: var(--color-primary);
+	font-family: 'Josefin Sans', sans-serif;
+	border-radius: 6px;
+	justify-content: center;
+	width: auto;
+}
+a{
+	text-decoration: none;
+}
+.next{
+	background-color: var(--color-primary);
+	font-family: 'Josefin Sans', sans-serif;
+	color: white;
+	padding: 8px;
+	border-radius: 10px;
+}
+.back{
+	border: 1px solid #EE0000;
+	color: var(--color-primary);
+	font-family: 'Josefin Sans', sans-serif;
+	padding: 8px;
+	border-radius: 10px;
+}
+/* checkbox button labels */
+.container{
+	font-family: 'Josefin Sans', sans-serif;
+	gap: 10px;
+}
+.sweetness-choice{
+	font-family: 'Josefin Sans', sans-serif;
+	gap: 10px;
+}
+
+
 
 /* This uses the same value as --size-xs. */
 @media screen and (width >= 320px) {
