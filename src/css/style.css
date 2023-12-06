@@ -22,42 +22,46 @@ to help you out.
 */
 
 body{
-	margin: 50px;
+	margin: 100px;
 }
 h1 {
 	color: var(--color-primary);
 	font-family: 'Staatliches', sans-serif;
 	text-align: center;
 }
+h2 {
+	color: var(--color-primary);
+	font-family: 'Staatliches', sans-serif;
+}
+p {
+	color: var(--color-primary);
+	font-family: 'Josefin Sans', sans-serif;
+}
 
 /* back and next buttons */
-.button{
-	display: flex;
+.pagebutton{
+	display: inline;
 	background-color: var(--color-primary);
 	font-family: 'Josefin Sans', sans-serif;
 	border-radius: 6px;
 	justify-content: center;
 	width: auto;
-}
-a{
-	text-decoration: none;
-}
-.next{
-	background-color: var(--color-primary);
-	font-family: 'Josefin Sans', sans-serif;
+	padding: 8px;
+	border-radius: 10px;
 	color: white;
-	padding: 8px;
-	border-radius: 10px;
 }
-.back{
-	border: 1px solid #EE0000;
-	color: var(--color-primary);
-	font-family: 'Josefin Sans', sans-serif;
-	padding: 8px;
-	border-radius: 10px;
+
+#pink-martini{
+	position: absolute;
+
 }
+
 /* checkbox button labels */
 .container{
+	font-family: 'Josefin Sans', sans-serif;
+	gap: 10px;
+}
+.hover-element{
 	font-family: 'Josefin Sans', sans-serif;
 	gap: 10px;
 }
@@ -65,6 +69,28 @@ a{
 	font-family: 'Josefin Sans', sans-serif;
 	gap: 10px;
 }
+
+.drink-cards{
+	border: var(--color-primary) 2px solid;
+	border-radius: 6px;
+	padding: 5px;
+	width: 40%;
+}
+
+.potential-drinks{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+a{
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+	color: var(--color-primary);
+	border: var(--color-primary) 2px solid;
+	border-radius: 6px;
+	padding: 5px;
+}
+
 
 
 
