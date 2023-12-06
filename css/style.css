@@ -1,0 +1,103 @@
+/*
+CSS controls the styling of the page.
+You can write a color in directly, or use variables.
+Try changing the color from blue to red in the
+primary color variable below.
+*/
+
+:root {
+	--color-primary: #EE0000;
+}
+
+/*
+CSS doesn't allow variables to be used in media
+queries just yet, but you can use these values
+to help you out.
+
+	--size-xs: 320px;
+	--size-sm: 480px;
+	--size-md: 768px;
+	--size-lg: 1024px;
+	--size-xl: 1200px;
+*/
+
+body{
+	margin: 100px;
+}
+h1 {
+	color: var(--color-primary);
+	font-family: 'Staatliches', sans-serif;
+	text-align: center;
+}
+h2 {
+	color: var(--color-primary);
+	font-family: 'Staatliches', sans-serif;
+}
+p {
+	color: var(--color-primary);
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+/* back and next buttons */
+.pagebutton{
+	display: inline;
+	background-color: var(--color-primary);
+	font-family: 'Josefin Sans', sans-serif;
+	border-radius: 6px;
+	justify-content: center;
+	width: auto;
+	padding: 8px;
+	border-radius: 10px;
+	color: white;
+}
+
+#pink-martini{
+	position: absolute;
+
+}
+
+/* checkbox button labels */
+.container{
+	font-family: 'Josefin Sans', sans-serif;
+	gap: 10px;
+}
+.hover-element{
+	font-family: 'Josefin Sans', sans-serif;
+	gap: 10px;
+}
+.sweetness-choice{
+	font-family: 'Josefin Sans', sans-serif;
+	gap: 10px;
+}
+
+.drink-cards{
+	border: var(--color-primary) 2px solid;
+	border-radius: 6px;
+	padding: 5px;
+	width: 40%;
+}
+
+.potential-drinks{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+}
+
+a{
+	text-decoration: none;
+	font-family: 'Josefin Sans', sans-serif;
+	color: var(--color-primary);
+	border: var(--color-primary) 2px solid;
+	border-radius: 6px;
+	padding: 5px;
+}
+
+
+
+
+/* This uses the same value as --size-xs. */
+@media screen and (width >= 320px) {
+	.content-container {
+		margin: 0 auto;
+		max-width: 768px;
+	}
+}
