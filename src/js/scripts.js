@@ -92,6 +92,7 @@ async function determineDrink() {
 		const row = airData.records[i]
 		const name = row.fields.Name
 		const notes = row.fields.Notes
+		const recipe = row.fields.Recipe
 		// keep track of the ingredients/characteristics of this drink
 		let options = [row.fields.Sweetness]
 		options = options.concat(row.fields.Base)
@@ -107,7 +108,7 @@ async function determineDrink() {
 			}
 		}
 
-		scoreList.push([count, name, notes])
+		scoreList.push([count, name, notes, recipe])
 	 }
 
 	console.log("list of scores:", scoreList)
@@ -124,7 +125,7 @@ async function determineDrink() {
 		<div class="drink-cards">
 			<h2>${firstFour[i][1]}</h2>
 			<p>${firstFour[i][2]}</p>
-			<a href="https://www.delish.com/cooking/recipe-ideas/a26556220/penne-alla-vodka-recipe/">Recipe</a>
+			<a href="${firstFour[i][3]}">Recipe</a>
 		</div>
 
 		`
@@ -138,7 +139,7 @@ async function determineDrink() {
 
 
 const title = document.querySelector("#page-title");
-const martini = document.querySelector("#pink-martini")
+const martini = document.querySelector("#pink-martini");
 const champagne = document.querySelector("#champagne-img")
 const nextButton = document.querySelector("#next");
 const prevButton = document.querySelector("#prev");
@@ -152,9 +153,9 @@ const restartButton = document.querySelector("#restart");
 
 function updateTitles () {
 	if (pageNumber === 0) {
-		title.innerHTML = "WONDERING WHAT YOU SHOULD ORDER AT THE BAR?";
-	} else if (pageNumber === 1) {
 		title.innerHTML = "ARE YOU 21 OR OLDER?";
+	} else if (pageNumber === 1) {
+		title.innerHTML = "WONDERING WHAT YOU SHOULD ORDER AT THE BAR?";
 	} else if (pageNumber === 2) {
 		title.innerHTML = "SORRY, COME BACK ON YOUR 21ST BIRTHDAY!";
 	} else if (pageNumber === 3) {
@@ -172,7 +173,7 @@ function updateTitles () {
 
 function updateContent () {
 	if (pageNumber === 0) {
-		martini.style.display = "block";
+		martini.style.display = "none";
 		champagne.style.display = "none";
 		baseChoice.style.display = "none";
 		mixerChoice.style.display = "none";
@@ -193,9 +194,10 @@ function updateContent () {
 		flavorChoice.style.display = "none";
 		sweetnessChoice.style.display = "none";
 		potentialDrinks.style.display = "none";
+		champagne.style.display = "block";
 		martini.style.display = "none";
 	} else if (pageNumber === 3) {
-		baseChoice.style.display = "flex";
+		baseChoice.style.display = "grid";
 		champagne.style.display = "none";
 		mixerChoice.style.display = "none";
 		flavorChoice.style.display = "none";
@@ -204,14 +206,14 @@ function updateContent () {
 		martini.style.display = "none";
 	} else if (pageNumber === 4) {
 		baseChoice.style.display = "none";
-		mixerChoice.style.display = "flex";
+		mixerChoice.style.display = "grid";
 		flavorChoice.style.display = "none";
 		sweetnessChoice.style.display = "none";
 		potentialDrinks.style.display = "none";
 	} else if (pageNumber === 5) {
 		baseChoice.style.display = "none";
 		mixerChoice.style.display = "none";
-		flavorChoice.style.display = "flex";
+		flavorChoice.style.display = "grid";
 		sweetnessChoice.style.display = "none";
 		potentialDrinks.style.display = "none";
 	} else if (pageNumber === 6) {
@@ -232,10 +234,11 @@ function updateContent () {
 
 function showCard(cardNumber) {
       const card = document.getElementById(`card${cardNumber}`);
-		console.log(card);
+		console.log("clicked card", cardNumber, card);
 		if (card !== null && card !== undefined) {
 			card.style.display = "flex";
 		}
+		console.log("updated card", card)
 }
 
 function hideCard(cardNumber) {
@@ -269,17 +272,17 @@ function updateChoices(form, checkboxId, isChecked) {
 
 function updateButtons () {
 	if (pageNumber === 0) {
-		prevButton.style.display = "none";
+		prevButton.style.display = "inline";
 		restartButton.style.display = "none";
-		nextButton.style.display = "block";
-		nextButton.innerHTML = "Yes!";
-		prevButton.innerHTML = "Back";
-	} else if (pageNumber === 1){
-		restartButton.style.display = "none";
-		prevButton.style.display = "block";
-		nextButton.style.display = "block";
+		nextButton.style.display = "inline";
 		nextButton.innerHTML = "Of Course!";
 		prevButton.innerHTML = "Not Yet!";
+	} else if (pageNumber === 1){
+		restartButton.style.display = "none";
+		prevButton.style.display = "none";
+		nextButton.style.display = "inline";
+		nextButton.innerHTML = "Yes!";
+		prevButton.innerHTML = "Back";
 	} else if (pageNumber === 2){
 		restartButton.style.display = "none";
 		prevButton.style.display = "none";
@@ -288,16 +291,16 @@ function updateButtons () {
 	} else if (pageNumber === 3){
 		restartButton.style.display = "none";
 		prevButton.style.display = "none";
-		nextButton.style.display = "block";
+		nextButton.style.display = "inline";
 		nextButton.innerHTML = "Next";
 	}  else if (pageNumber === 7) {
 		prevButton.style.display = "none";
 		nextButton.style.display = "none"
-		restartButton.style.display = "block";
+		restartButton.style.display = "inline";
 		prevButton.innerHTML = "Back";
 	} else {
-		prevButton.style.display = "block";
-		nextButton.style.display = "block";
+		prevButton.style.display = "inline";
+		nextButton.style.display = "inline";
 		restartButton.style.display = "none";
 		nextButton.innerHTML = "Next";
 		prevButton.innerHTML = "Back";
@@ -305,16 +308,18 @@ function updateButtons () {
 }
 
 function restartPage () {
-	pageNumber = 0;
+	pageNumber = 3;
 	updateTitles();
 	updateContent();
 	updateButtons();
 }
 
 function nextPage() {
-	if (pageNumber === 1) {
+	if (pageNumber === 0) {
+		pageNumber = 1;
+	} else if (pageNumber === 1) {
 		pageNumber = 3;
-	} else {
+	}	else {
 		pageNumber++;
 	}
 
@@ -329,7 +334,7 @@ function yesResponse() {
 }
 
 function prevPage() {
-	if (pageNumber === 1) {
+	if (pageNumber === 0) {
 		pageNumber = 2;
 	} else {
 		pageNumber--;
