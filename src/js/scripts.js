@@ -6,22 +6,6 @@
 // - Run npm run test regularly to check autograding
 // - You'll need to link this file to your HTML :)
 
-// PERSONAL ACCESS TOKEN : patt85hn5qn6NSDm3.ffadbcdda546c381ce054eba74e69d5909c3daa42aee0eeef18438c5c3786ee2
-
-// https://airtable.com/appmqx3AsOPOuAddI/tblIDzvpWZes5YcMG/viw2juumuVu1243aB/recY3eLA13afIWRZS?blocks=hide
-
-// const API_KEY =
-// 'patt85hn5qn6NSDm3.ffadbcdda546c381ce054eba74e69d5909c3daa42aee0eeef18438c5c3786ee2';
-
-// const baseId = 'appmqx3AsOPOuAddI/tblIDzvpWZes5YcMG';
-// const tableId = 'tblIDzvpWZes5YcMG/viw2juumuVu1243aB'
-// const apiUrl = `https://api.airtable.com/v0/${baseId}/${tableId}`;
-
-// Try putting ids on these things like page-title and page-choices so that in your JS,
-// you can use document.querySelector('#page-title') to get at this easily, and then set
-// the inner text to whatever the next page should be when you click the next button.
-
-
 
 let pageNumber = 0;
 
@@ -60,15 +44,12 @@ async function fetchData() {
  }
 
 
-
-
 async function determineDrink() {
 	await fetchData();
 
-	// obtain list of OUR items
+	// obtain list of my items
 	let userSelections = [sweetnessChoiceValue]
 
-	// iterate over remaing
 	for (const [key, value] of Object.entries(baseChoiceValues)) {
 		if (value) {
 			userSelections.push(key)
@@ -98,7 +79,6 @@ async function determineDrink() {
 		options = options.concat(row.fields.Base)
 		options = options.concat(row.fields.Flavors)
 		options = options.concat(row.fields.Mixer)
-
 
 		// iterate over options, count how many options match our userSelections
 		let count = 0
@@ -132,10 +112,7 @@ async function determineDrink() {
 	}
 
 	potentialDrinks.innerHTML=cards;
-
-
 }
-
 
 
 const title = document.querySelector("#page-title");
