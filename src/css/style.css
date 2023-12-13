@@ -9,19 +9,6 @@ primary color variable below.
 	--color-primary: #EE0000;
 }
 
-/*
-CSS doesn't allow variables to be used in media
-queries just yet, but you can use these values
-to help you out.
-
-	--size-xs: 320px;
-	--size-sm: 480px;
-	--size-md: 768px;
-	--size-lg: 1024px;
-	--size-xl: 1200px;
-*/
-
-
 body{
 	margin: 0px;
 	justify-content: center;
@@ -245,10 +232,6 @@ a{
 		top: 15%;
     	left: 32%;
 	}
-	/* .container{
-		font-family: 'Josefin Sans', sans-serif;
-		gap: 10px;
-	} */
 
 	.base-choice{
 		margin: 50px;
