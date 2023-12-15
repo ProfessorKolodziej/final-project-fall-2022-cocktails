@@ -9,51 +9,125 @@ primary color variable below.
 	--color-primary: #EE0000;
 }
 
-/*
-CSS doesn't allow variables to be used in media
-queries just yet, but you can use these values
-to help you out.
-
-	--size-xs: 320px;
-	--size-sm: 480px;
-	--size-md: 768px;
-	--size-lg: 1024px;
-	--size-xl: 1200px;
-*/
-
 body{
-	margin: 100px;
+	margin: 0px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	min-height: 100vh;
+	position: relative;
 }
+
 h1 {
 	color: var(--color-primary);
 	font-family: 'Staatliches', sans-serif;
 	text-align: center;
+	font-size: 45px;
+	margin: 30px;
+
 }
+
 h2 {
 	color: var(--color-primary);
 	font-family: 'Staatliches', sans-serif;
+	font-size: 30px;
+	margin: 0px;
 }
+
+h3{
+	margin: 0px;
+	color: #68717A;
+	font-style: bold;
+}
+
 p {
-	color: var(--color-primary);
+	color: #68717A;
 	font-family: 'Josefin Sans', sans-serif;
+	font-size: 12px;
 }
+
+* {
+	font-size: 20px;
+}
+
 
 /* back and next buttons */
 .pagebutton{
-	display: inline;
-	background-color: var(--color-primary);
 	font-family: 'Josefin Sans', sans-serif;
 	border-radius: 6px;
+	border-color: var(--color-primary);
 	justify-content: center;
 	width: auto;
 	padding: 8px;
 	border-radius: 10px;
+}
+
+#buttons {
+	margin: 0;
+	display: flex;
+   align-items: center;
+	justify-content: center;
+	gap: 20px;
+}
+
+#prev {
+	color: var(--color-primary);
+	background-color: white;
+}
+
+#next {
+	background-color: var(--color-primary);
+	color: white;
+}
+
+#restart {
+	background-color: var(--color-primary);
 	color: white;
 }
 
 #pink-martini{
+	width: 60%;
 	position: absolute;
+	margin-left: 20%;
+	bottom: 0;
+	overflow: hidden;
+}
 
+#champagne-img{
+	position: absolute;
+	bottom: 0;
+	width: 40%;
+	margin-left: 25%;
+}
+
+.card{
+	position: absolute;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: var(--color-primary) 2px solid;
+	border-radius: 6px;
+	padding: 5px;
+	font-family: 'Josefin Sans', sans-serif;
+	flex-direction: row;
+	max-height: 180px;
+	width: 300px;
+	background-color: white;
+	display: none;
+}
+
+.baseimages img{
+	width: 100%;
+	height: 100%;
+	align-items: center;
+}
+
+.right-column{
+	margin: 10px;
+	gap: 5px;
+	display: flex;
+	flex-direction: column;
+	max-width: 180px;
 }
 
 /* checkbox button labels */
@@ -61,30 +135,65 @@ p {
 	font-family: 'Josefin Sans', sans-serif;
 	gap: 10px;
 }
+
 .hover-element{
 	font-family: 'Josefin Sans', sans-serif;
 	gap: 10px;
 }
+
+.base-choice{
+ 	display: grid;
+	grid-template-columns: repeat(2, .4fr);
+	justify-content: center;
+	align-items: center;
+	gap: 30px;
+	margin: 30px;
+	margin-left: 15%;
+}
+
+.mixer-choice{
+	margin: 30px;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+}
+
+.flavor-choice{
+	grid-template-columns: repeat(2, 1fr);
+	margin: 30px;
+	margin-left: 15%;
+	gap: 20px;
+}
+
 .sweetness-choice{
 	font-family: 'Josefin Sans', sans-serif;
 	gap: 10px;
+	justify-content: center;
+	align-items: center;
+	margin: 30px;
+}
+
+.potential-drinks{
+	display: grid;
+	margin: 30px;
+	gap: 20px;
 }
 
 .drink-cards{
 	border: var(--color-primary) 2px solid;
 	border-radius: 6px;
-	padding: 5px;
-	width: 40%;
+	padding: 30px;
 }
 
-.potential-drinks{
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+.drink-cards p{
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 a{
 	text-decoration: none;
 	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
 	color: var(--color-primary);
 	border: var(--color-primary) 2px solid;
 	border-radius: 6px;
@@ -94,10 +203,146 @@ a{
 
 
 
-/* This uses the same value as --size-xs. */
-@media screen and (width >= 320px) {
-	.content-container {
-		margin: 0 auto;
-		max-width: 768px;
+@media screen and (width >=700px) {
+
+	h1 {
+		font-size: 60px;
+	}
+
+	p {
+		font-size: 14px;
+	}
+
+	*{
+		font-size: 25px;
+	}
+
+	#pink-martini{
+		width: 70%;
+		margin-left: 15%;
+	}
+
+	#champagne-img {
+		width: 40%;
+		margin-left: 30%;
+	}
+
+	.card{
+		transform: scale(1.5);
+		top: 15%;
+    	left: 32%;
+	}
+
+	.base-choice{
+		margin: 50px;
+	}
+	.mixer-choice{
+		grid-template-columns: repeat(2, .45fr);
+		margin: 50px;
+		margin-left: 70px;
+	}
+
+  .flavor-choice{
+		margin-left: 200px;
+		margin-right: 200px;
+		margin-top: 50px;
+		margin-bottom: 50px;
+		gap: 30px;
+  	}
+
+  .sweetness-choice{
+		gap: 30px;
+		margin: 50px;
+  	}
+
+  .pagebutton{
+		font-size: 20px;
+  	}
+
+	.potential-drinks{
+		grid-template-columns: repeat(2, 1fr);
+		margin: 50px;
+		gap: 30px;
+	}
+}
+
+@media screen and (width >=1024px) {
+
+	h1 {
+		font-size: 80px;
+		margin-left: 50px;
+		margin-right: 50px;
+	}
+
+	h3{
+		margin-bottom: 10px;
+	}
+
+	p {
+		margin: 0px;
+		font-size: 18px;
+	}
+
+	* {
+		font-size: 30px;
+	}
+
+	#pink-martini{
+		width: 25%;
+		margin-left: 37%;
+	}
+
+	.base-choice{
+		grid-template-columns: repeat(3, .4fr);
+		margin: 80px;
+		margin-left: 160px;
+  	}
+
+	.card {
+		width: 400px;
+		max-height: 250px;
+		left: 35%;
+		top: 15%;
+	}
+
+	.card p{
+		font-size: 18px;
+	}
+
+	.baseimages img {
+		width: 130px;
+	}
+
+	.right-column{
+		max-width: 250px;
+	}
+
+	.mixer-choice{
+	  	gap: 50px;
+		margin: 80px;
+		margin-left: 190px;
+  	}
+
+  .flavor-choice{
+		grid-template-columns: repeat(3, 1fr);
+		gap: 50px;
+		margin: 80px;
+		margin-left: 20%;
+  	}
+
+  .sweetness-choice{
+		gap: 30px;
+		margin: 80px;
+  	}
+
+	.pagebutton{
+		font-size: 30px;
+		padding: 20px;
+		border-radius: 10px;
+	}
+
+	#champagne-img {
+		width: 23%;
+		margin-left: 35%;
 	}
 }

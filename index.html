@@ -16,198 +16,193 @@
 	<main>
 		<h1 id="page-title"></h1>
 
+
 			<div class="base-choice">
-				<div class="hover-element">Brandy
-					<input type="checkbox" checked="checked">
-					<span class="checkmark"></span>
-					<div class="card" id="card1">
-					  <h3>35-60%</h3>
-					  Brandy is a distilled spirit made from fruit-based wine. It has a lightly sweet  taste with hints of flowers, fruit, citrus zest, and a slight oak flavor.
-					</div>
-				 </div>
 
-				<div class="hover-element" onmouseover="showCard(2)" onmouseout="hideCard(2)">Gin
-					<input type="checkbox" checked="checked">
-					<span class="checkmark"></span>
-					<div class="card" id="card2">
-					  <h3>36-50%</h3>
-					  Gin is a distilled spirit that is made from grain and flavored with botanicals. It is most noted for its pine flavor due to its main ingredient, juniper berries.
-					</div>
-				 </div>
+				<div class="hover-element" onmouseover="showCard(1)" onmouseout="hideCard(1)">
+					<input type="checkbox" onchange="updateChoices('base', 'brandy', this.checked)">
+					<span class="checkmark"></span>Brandy
+				</div>
 
-				 <div class="hover-element" onmouseover="showCard(3)" onmouseout="hideCard(3)">Rum
-					<input type="checkbox" checked="checked">
-					<span class="checkmark"></span>
-					<div class="card" id="card3">
-					  <h3>40%</h3>
-					  Rum is a spirit distilled from the fermented juice of sugarcane and other sugarcane products. Even though it isn't inherently sweet, it tends to evoke the taste of sugar.
+				<div class="card" id="card1">
+					<div class="baseimages">
+						<img id="brandy" src = "images/brandyimg.png"/>
+					</div>
+					<div class = "right-column">
+						<h3>36-60%</h3>
+				  		<p>Brandy is a distilled spirit made from fruit-based wine. It has a lightly sweet taste with hints of flowers, fruit, citrus zest, and a slight oak flavor.</p>
 					</div>
 				</div>
 
-				 <div class="hover-element" onmouseover="showCard(4)" onmouseout="hideCard(4)">Tequila
-					<input type="checkbox" checked="checked">
-					<span class="checkmark"></span>
-					<div class="card" id="card4">
-					  <h3>35-55%</h3>
-					  Tequila is a distilled liquor, usually clear in color and unaged, and made from the fermented juice of an agave plant. It can have spicy flavors such as pepper, cinnamon and baking spices.
-					</div>
-				 </div>
+				<div class="hover-element" onmouseover="showCard(2)" onmouseout="hideCard(2)">
+					<input type="checkbox" onchange="updateChoices('base', 'gin', this.checked)"/>
+					<span class="checkmark"></span>Gin
+				</div>
 
-				 <div class="hover-element" onmouseover="showCard(5)" onmouseout="hideCard(5)">Vodka
-					<input type="checkbox" checked="checked">
-					<span class="checkmark"></span>
-					<div class="card" id="card5">
-					  <h3>35-50%</h3>
-					  Vodka is a distilled alcoholic beverage, clear and colourless and without definite aroma or taste. It is traditionally made from distilling liquid from fermented cereal grains, and potatoes.
+				<div class="card" id="card2">
+					<div class ="baseimages">
+						<img id="gin" src = "images/ginimg.png">
 					</div>
-				 </div>
+					<div class = "right-column">
+						<h3>36-50%</h3>
+				  		<p>Gin is a distilled spirit that is made from grain and flavored with botanicals. It is most noted for its pine flavor due to its main ingredient, juniper berries.</p>
+					</div>
+				</div>
 
-				 <div class="hover-element" onmouseover="showCard(6)" onmouseout="hideCard(6)">Whiskey
-					<input type="checkbox" checked="checked">
-					<span class="checkmark"></span>
-					<div class="card" id="card6">
-					  <h3>40-40%</h3>
-					  Whiskey is a type of liquor made from fermented grain mash. It has a rich, smooth, and full-bodied taste with an essence of spiced, sweet notes such as vanilla, zesty fruit and oak.
+				<div class="hover-element" onmouseover="showCard(3)" onmouseout="hideCard(3)">
+					<input type="checkbox" onchange="updateChoices('base', 'rum', this.checked)">
+					<span class="checkmark"></span>Rum
+				</div>
+
+				<div class="card" id="card3">
+					<div class ="baseimages">
+						<img id="rum" src = "images/rumimg.png">
 					</div>
-				 </div>
+					<div class = "right-column">
+						<h3>40%</h3>
+						<p>Rum is a spirit distilled from the fermented juice of sugarcane and other sugarcane products. Even though it isn't inherently sweet, it tends to evoke the taste of sugar.</p>
+					</div>
+				</div>
+
+				<div class="hover-element" onmouseover="showCard(4)" onmouseout="hideCard(4)">
+					<input type="checkbox" onchange="updateChoices('base', 'tequila', this.checked)">
+					<span class="checkmark"></span>Tequila
+				</div>
+
+				<div class="card" id="card4">
+					<div class ="baseimages">
+						<img id="tequila" src = "images/tequilaimg.png">
+					</div>
+					<div class = "right-column">
+						<h3>35-55%</h3>
+						<p>Tequila is a distilled liquor, usually clear in color and unaged, and made from the fermented juice of an agave plant. It can have spicy flavors such as pepper, cinnamon and baking spices.</p>
+					</div>
+				</div>
+
+				<div class="hover-element" onmouseover="showCard(5)" onmouseout="hideCard(5)">
+					<input type="checkbox" onchange="updateChoices('base', 'vodka', this.checked)">
+					<span class="checkmark"></span>Vodka
+				</div>
+
+				<div class="card" id="card5">
+					<div class ="baseimages">
+						<img id="vodka" src = "images/vodkaimg.png">
+					</div>
+					<div class = "right-column">
+						<h3>35-50%</h3>
+						<p>Vodka is a distilled alcoholic beverage, clear and colourless and without definite aroma or taste. It is traditionally made from distilling liquid from fermented cereal grains, and potatoes.</p>
+					</div>
+				</div>
+
+				<div class="hover-element" onmouseover="showCard(6)" onmouseout="hideCard(6)">
+					<input type="checkbox" onchange="updateChoices('base', 'whiskey', this.checked)">
+					<span class="checkmark"></span>Whiskey
+				</div>
+
+				<div class="card" id="card6">
+					<div class ="baseimages">
+						<img id="whiskey" src = "images/whiskeyimg.png">
+					</div>
+					<div class = "right-column">
+						<h3>40-50%</h3>
+					   <p>Whiskey is a type of liquor made from fermented grain mash. It has a rich, smooth, and full-bodied taste with an essence of spiced, sweet notes such as vanilla, zesty fruit and oak.</p>
+					</div>
+				</div>
+
 			</div>
 
 
 			<div class="mixer-choice">
-				<label class="container">Ginger Ale
-					<input type="checkbox" >
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('mixer', 'tonic/soda water', this.checked)">
+					<span class="checkmark"></span>Tonic/Soda Water
 				</label>
-				<label class="container">Tonic Water
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('mixer', 'ginger beer', this.checked)">
+					<span class="checkmark"></span>Ginger Beer
 				</label>
-				<label class="container">Ginger Beer
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('mixer', 'lemon/lime', this.checked)">
+					<span class="checkmark"></span>Lemon/Lime Juice
 				</label>
-				<label class="container">Lemon/Lime Juice
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Soda Water
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Cola
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('mixer', 'cola', this.checked)">
+					<span class="checkmark"></span>Cola
 				</label>
 			</div>
 
+
 			<div class="flavor-choice">
-				<label class="container">Almond
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'almond', this.checked)">
+					<span class="checkmark"></span>Almond
 				</label>
-				<label class="container">Mint
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'mint', this.checked)">
+					<span class="checkmark"></span>Mint
 				</label>
-				<label class="container">Coffee
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'coffee', this.checked)">
+					<span class="checkmark"></span>Coffee
 				</label>
-				<label class="container">Coconut
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'herbal', this.checked)">
+					<span class="checkmark"></span>Herbal
 				</label>
-				<label class="container">Herbal
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'cherry', this.checked)">
+					<span class="checkmark"></span>Cherry
 				</label>
-				<label class="container">Irish Cream
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'lemon', this.checked)">
+					<span class="checkmark"></span>Lemon
 				</label>
-				<label class="container">Chocolate
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'peach', this.checked)">
+					<span class="checkmark"></span>Peach
 				</label>
-				<label class="container">Cherry
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'lime', this.checked)">
+					<span class="checkmark"></span>Lime
 				</label>
-				<label class="container">Lemom
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'pineapple', this.checked)">
+					<span class="checkmark"></span>Pineapple
 				</label>
-				<label class="container">Peach
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'grapefruit', this.checked)">
+					<span class="checkmark"></span>Grapefruit
 				</label>
-				<label class="container">Lime
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'orange', this.checked)">
+					<span class="checkmark"></span>Orange
 				</label>
-				<label class="container">Melon
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Pineapple
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Grapefruit
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Orange
-					<input type="checkbox">
-					<span class="checkmark"></span>
-				</label>
-				<label class="container">Cranberry
-					<input type="checkbox">
-					<span class="checkmark"></span>
+				<label class="container">
+					<input type="checkbox" onchange="updateChoices('flavor', 'cranberry', this.checked)">
+					<span class="checkmark"></span>Cranberry
 				</label>
 			</div>
 
 			<div class="sweetness-choice">
-				<input type="radio" name = "ans" value="bitter">Bitter
-				<input type="radio" name = "ans" value="bitter-sweet">Bitter Sweet
-				<input type="radio" name = "ans" value="sweet">Sweet
+				<input type="radio" name = "ans" value="bitter" onchange="updateChoices('sweetness', 'bitter', this.checked)">Bitter
+				<input type="radio" name = "ans" value="bitter-sweet" onchange="updateChoices('sweetness', 'bitterSweet', this.checked)">Bitter Sweet
+				<input type="radio" name = "ans" value="sweet" onchange="updateChoices('sweetness', 'sweet', this.checked)">Sweet
 			</div>
 
 			<div class ="potential-drinks">
-				<div class = "drink-cards">
-					<img src="./images/pastaimg1.png" alt="Drink Image">
-					<h2>Drink Title</h2>
-					<p>drink descritption paragraph</p>
-					<a href="https://www.delish.com/cooking/recipe-ideas/a26556220/penne-alla-vodka-recipe/">Recipe</a>
-				</div>
-				<div class = "drink-cards">
-					<img src="./images/pastaimg1.png" alt="Drink Image">
-					<h2>Drink Title</h2>
-					<p>drink descritption paragraph</p>
-					<a href="https://www.delish.com/cooking/recipe-ideas/a26556220/penne-alla-vodka-recipe/">Recipe</a>
-				</div>
-				<div class = "drink-cards">
-					<img src="./images/pastaimg1.png" alt="Drink Image">
-					<h2>Drink Title</h2>
-					<p>drink descritption paragraph</p>
-					<a href="https://www.delish.com/cooking/recipe-ideas/a26556220/penne-alla-vodka-recipe/">Recipe</a>
-				</div>
-				<div class = "drink-cards">
-					<img src="./images/pastaimg1.png" alt="Drink Image">
-					<h2>Drink Title</h2>
-					<p>drink descritption paragraph</p>
-					<a href="https://www.delish.com/cooking/recipe-ideas/a26556220/penne-alla-vodka-recipe/">Recipe</a>
-				</div>
+
 			</div>
 
-		<div id="buttons">
-			<button id="prev" class="pagebutton" onclick="prevPage()">Back</button>
-			<button id="next" class="pagebutton" onclick="nextPage()">Next</button>
-			<button id="restart" class="pagebutton" onclick="restartPage()">Restart</button>
-		</div>
 
+			<div id="buttons">
+				<button id="prev" class="pagebutton" onclick="prevPage()">Back</button>
+				<button id="next" class="pagebutton" onclick="nextPage()">Next</button>
+				<button id="restart" class="pagebutton" onclick="restartPage()">Restart</button>
+			</div>
 
 		<img id="pink-martini" src = "images/pink-martini.png">
+		<img id="champagne-img" src = "images/champagneimg.png">
+
 	</main>
 
 
